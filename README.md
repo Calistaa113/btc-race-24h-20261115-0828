@@ -4,7 +4,7 @@
 [![rank](https://make.fun/badge/btc-race-24h-20261115-0828/Calistaa113/btc-race-24h-20261115-0828/rank.svg)](https://make.fun/bounty/btc-race-24h-20261115-0828/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=btc-race-24h-20261115-0828)
 [![reward](https://make.fun/badge/btc-race-24h-20261115-0828/Calistaa113/btc-race-24h-20261115-0828/reward.svg)](https://make.fun/bounty/btc-race-24h-20261115-0828?utm_source=github&utm_medium=readme&utm_campaign=btc-race-24h-20261115-0828)
 
-An ignition-momentum BTC trading bot: it trades cbBTC/USDC minute by minute, buying full size only on genuine 30-minute up-legs, with a trailing stop and an EMA exit.
+A two-tier dip BTC trading bot: it trades cbBTC/USDC minute by minute, buying deep washouts (and a shallow early-range dip) and riding the snap-back, with take-profit, hard stop and trailing-stop exits.
 
 ## Run it
 
