@@ -4,10 +4,10 @@
 // every lag on the dev window), so fast trend-following whipsaws itself to death —
 // the EMA-cross baseline loses $135 on the dev window. What does work is waiting
 // in cash for a genuine up-leg and riding it: buy only when the close is up more
-// than 1% over the last 30 minutes (a ~1.4-sigma 30-minute move), then exit on a
+// than 0.9% over the last 30 minutes (a ~1.3-sigma 30-minute move), then exit on a
 // 0.7% trailing stop from the highest close since entry, a 90-bar max hold, or the
 // fast EMA crossing back below the slow one (the trend is broken). A full-size
-// round trip costs ~26 bps, so a 1% ignition clears the cost with room; the
+// round trip costs ~26 bps, so a 0.9% ignition clears the cost with room; the
 // trailing stop caps any single losing trade near 1% of equity. The bot is flat
 // most of the time, which is the point: in a falling or choppy window it simply
 // does not play, and in a rising window it catches the legs. Nothing here reads
@@ -18,10 +18,10 @@
 import { runBars, type BarsState, type BuyInput, type SellInput } from './vendor/makefun-bars.ts';
 
 const SYMBOL = 'CBBTC';
-/** Entry: close up more than this over the lookback (1% over 30 bars). */
+/** Entry: close up more than this over the lookback (0.9% over 30 bars). */
 const LOOKBACK = 30;
-const IGNITION_NUM = 101n; // CBBTC close must exceed close[LOOKBACK] * 101/100
-const IGNITION_DEN = 100n;
+const IGNITION_NUM = 1009n; // CBBTC close must exceed close[LOOKBACK] * 1009/1000
+const IGNITION_DEN = 1000n;
 /** Exit: sell when the close falls this far below the peak close since entry. */
 const TRAIL_NUM = 993n; // peak * 993/1000
 const TRAIL_DEN = 1000n;
